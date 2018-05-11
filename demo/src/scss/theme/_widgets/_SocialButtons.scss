@@ -1,0 +1,50 @@
+
+.SocialButtons {
+    color: $color_icons;
+    white-space: nowrap;
+
+    &::after {
+        // Clearfix:
+        clear:   both;
+        content: '';
+        display: table;
+    }
+
+    ul.socialbuttons-list {
+        font-size: 1rem;
+        line-height: 1;
+
+        ul.socialbuttons-list {
+            display: none; // Nesting not permitted
+        }
+    }
+
+    li.socialbuttons-item {
+        display: block;
+        float: left;
+        margin-bottom: $spacer_xhalf;
+        margin-right: $spacer_xhalf;
+
+        &:nth-child(5n+6) { // Every 5th child after and starting with the 6th
+            clear: left;
+        }
+
+        &:last-child {
+            margin-bottom: $spacer_x1 !important;
+        }
+
+    }
+
+    a.socialbuttons-link {
+        display: block;
+        float: left;
+        font-size: 0;
+        line-height: 0;
+        @include hyperlinks;
+    }
+
+    svg.socialbuttons-icon {
+        height: $icon_length;
+        width: $icon_length;
+    }
+}

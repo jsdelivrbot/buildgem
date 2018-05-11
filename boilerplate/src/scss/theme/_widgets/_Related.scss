@@ -1,0 +1,22 @@
+
+.Related {
+
+    h2.related-title {
+        font-size: $font_size_h2;
+        font-weight: $font_weight_sans_bold;
+        line-height: $line_height_h2;
+        margin-bottom: $spacer_x1;
+    }
+
+    ul.related-list {
+        font-size: $font_size_default;
+        line-height: $line_height_default;
+    }
+
+    //li.related-item {}
+
+    a.related-link {
+        @include hyperlinks;
+    }
+
+}

@@ -1,0 +1,42 @@
+
+@mixin hyperlinks {
+
+    color: $color_clickable;
+    outline-offset: $outline_offset;
+    text-decoration: underline;
+
+    &:focus, &:active {
+        outline-style: $outline_style;
+        outline-width: $outline_width;
+        outline-color: $color_outline;
+    }
+
+    &:hover {
+        color: $color_clickable_hover;
+    }
+
+    &:focus {
+        color: $color_clickable_focus;
+    }
+
+    &:active {
+        color: $color_clickable_active;
+    }
+
+    &:visited {
+        color: $color_clickable_visited;
+    }
+
+    &:visited:hover {
+        color: $color_clickable_visited_hover;
+    }
+
+    &:visited:focus {
+        color: $color_clickable_visited_focus;
+    }
+
+    &:visited:active {
+        color: $color_clickable_visited_active;
+    }
+
+}

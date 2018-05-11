@@ -1,0 +1,56 @@
+
+.Breadcrumb {
+    //white-space: nowrap;
+    //margin-top: -1px !important; // Visual alignment tweak
+
+    h2.breadcrumb-title {
+        // .text-only
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+    }
+
+    ul.breadcrumb-list {
+        font-size: $font_size_default;
+        //font-weight: $font_weight_sans_bold;
+        line-height: $line_height_default;
+        //line-height: 2rem; // Equal to Hamburger icon height
+        //vertical-align: 1px;
+
+        &::after {
+            // Clearfix:
+            clear: both;
+            content: '';
+            display: table;
+        }
+
+        ul {
+            display: none; // Nesting not permitted
+        }
+    }
+
+    li.breadcrumb-item  {
+        //color: $color_text_quiet;
+        float: left;
+
+        &::after {
+            //color: $color_text_quiet;
+            content: '/';
+            //font-weight: $font_weight_sans_normal;
+            padding: 0 0.5rem;
+        }
+
+        //&:last-child {
+        //    &::after {
+        //        content: '';
+        //        padding: 0;
+        //    }
+        //}
+    }
+
+    a.breadcrumb-link {
+        //white-space: nowrap;
+        @include hyperlinks;
+    }
+
+}

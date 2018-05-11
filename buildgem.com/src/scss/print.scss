@@ -1,0 +1,105 @@
+@charset 'UTF-8';
+
+/**
+ * The MIT License (MIT)
+ * Copyright (c) 2010-2018 Kieran Potts
+ */
+
+// Set a 1.5cm margin around printed documents. Remove backgrounds, filters,
+// shadows, etc. Use the !important keyword here to give these settings priority
+// over higher-specificity selectors used elsewhere.
+
+@page { margin: 1.5cm; }
+
+@media print {
+
+    * {
+        background-color: transparent    !important;
+        background-image: none           !important;
+        color:            hsl(0, 0%, 0%) !important;
+        -webkit-filter:   none           !important;
+                filter:   none           !important;
+        height:           auto           !important;
+        box-shadow:       none           !important;
+        text-shadow:      none           !important;
+    }
+
+    // Typography:
+
+    // Prevent headings from being printed at the very bottom of a page. Don't
+    // split headings, blockquotes, preformatted blocks, tables or images over
+    // pages. Try to avoid having just the first or last line of a paragraph
+    // appearing on its own at the bottom or top of a printed page. Enable
+    // line wrapping for preformatted text when printed. The mark element has
+    // no meaning in a printed document, so unset its default presentation
+    // from the main reset style sheet.
+
+    html { font-size:   10pt; }
+    body { font-family: 'Cambria', 'Georgia', 'Times New Roman', 'Times', serif; }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    blockquote, img, pre, table {
+        page-break-inside: avoid;
+    }
+
+    p {
+        orphans: 2;
+        widows:  2;
+    }
+
+    pre {
+        white-space: pre-wrap   !important;
+        word-wrap:   break-word !important;
+    }
+
+    mark {
+        background-color: transparent !important;
+        color:            inherit     !important;
+        font-weight:      inherit     !important;
+    }
+
+    // Interactive controls and multimedia
+
+    // Forms and controls don't have any place in a printed document. Neither
+    // do audio, video, etc. Hide these things. Apply the no-print modifier to
+    // anything else that should not be printed.
+
+    // Hyperlinks can't be clicked from a printed document, so remove any
+    // underlines and any other special styling. For external links only,
+    // print the hyperlink URL after the link text, in brackets. The same can
+    // be done for internal links, assuming they are all relative to a global
+    // base URL.
+
+    // The title attribute for abbr and dfn elements can also be printed in
+    // brackets after the text.
+
+    form, fieldset, legend, button, label, input, select, textarea,
+    datalist, output, progress {
+        display: none !important;
+    }
+
+    audio, video, nav,
+    embed, object, iframe {
+        display: none !important;
+    }
+
+    *.no-print { display: none !important; }
+
+    a {
+        background:      transparent !important;
+        border:          0           !important;
+        text-decoration: none        !important;
+    }
+
+    //a::after { content: ' (http://www.example.com/' attr(href) ')' !important; }
+    a[rel="external"]::after { content: ' [' attr(href) ']' !important; }
+
+    abbr[title], dfn[title] { border: 0 !important; }
+    abbr[title]::after      { content: ' (' attr(title) ')' !important; }
+    dfn[title]::after       { content: ' (' attr(title) ')' !important; }
+
+}

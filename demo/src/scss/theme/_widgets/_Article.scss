@@ -1,0 +1,91 @@
+
+.Article {
+
+    //h2 {
+    //    font-size: $font_size_h2;
+    //    font-weight: $font_weight_sans_bold;
+    //    line-height: $line_height_h2;
+    //    margin-bottom: $spacer_x1;
+    //    margin-top: $spacer_x2;
+    //}
+
+    //h3 {
+    //    font-size: $font_size_h3;
+    //    font-weight: $font_weight_sans_bold;
+    //    line-height: $line_height_h3;
+    //    margin-bottom: $spacer_x1;
+    //    margin-top: $spacer_x2;
+    //}
+
+    //h2 + h3 {
+    //    margin-top: $spacer_x1;
+    //}
+
+    //p, ul, ol {
+    //    font-size: $font_size_default;
+    //    line-height: $line_height_default;
+    //    margin-bottom: $spacer_x1;
+    //}
+
+    //ul ul, ol ol {
+    //    padding-left: 2em;
+    //}
+
+    //ul li {
+    //    margin-left: 0.5em;
+    //    padding-left: 0.5em;
+    //    position: relative;
+
+    //    &::before {
+    //        color: $color_text_bullet;
+    //        content: '■';
+    //        font-weight: $font_weight_sans_bold;
+    //        //margin-top: -1px;
+    //        position: absolute;
+    //        right: 100%;
+    //    }
+    //}
+
+    //hr {
+    //    border-top: 1px solid $color_link_hr;
+    //    margin-bottom: $spacer_x2;
+    //    margin-top: $spacer_x2;
+    //}
+
+    //code {
+    //    background: $color_code_background;
+    //    border-radius: $border_radius;
+    //    color: $color_code_foreground;
+    //    display: inline-block;
+    //}
+
+    //pre {
+    //    background: $color_pre_background;
+    //    border-radius: $border_radius;
+    //    color: $color_pre_foreground;
+    //    letter-spacing: 0.05em;
+    //    line-height: $line_height_monospace;
+    //    margin: $spacer_x1 0;
+    //    padding: $spacer_xhalf $spacer_x1;
+
+    //    code {
+    //        background: transparent;
+    //        border-radius: 0;
+    //        color: inherit;
+    //        display: block;
+    //    }
+    //}
+
+    //img {
+    //    margin: 0 auto;
+    //}
+
+    //a {
+    //    @include hyperlinks;
+    //}
+
+    //bold, strong {
+    //    font-weight: $font_weight_sans_bold;
+    //}
+
+}

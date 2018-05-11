@@ -1,0 +1,42 @@
+
+.Menu {
+    color: $color_text_menu;
+
+    h2.menu-title {
+        // .text-only
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+    }
+
+    ul.menu-list {
+        font-size: $font_size_menu;
+        line-height: $line_height_menu;
+
+        ul.menu-list {
+            display: none; // Nesting not permitted
+        }
+    }
+
+    li.menu-item {
+        margin-bottom: $spacer_xquarter;
+    }
+
+    span.menu-item-tag {
+        font-size: 80%;
+        vertical-align: 0.1em;
+        color: $color_text_quiet;
+
+        &::before {
+            content: '(';
+        }
+
+        &::after {
+            content: ')';
+        }
+    }
+
+    a.menu-link {
+        @include hyperlinks;
+    }
+}

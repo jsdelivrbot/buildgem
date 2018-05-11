@@ -1,0 +1,28 @@
+<head>
+    <meta charset="utf-8" />
+    <title>{{ app_name }} – {{ title }}</title>
+    <base href="https://www.buildgem.com" />
+    <meta name="description" content="{{ description }}" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ canonical }}" rel="canonical" />
+    <link href="/static/ico/buildgem.ico?v={{ __build__ }}" rel="icon" />
+    <link href="/static/css/baseline.min.css?v={{ __build__ }}" media="all" rel="stylesheet" />
+    <script>
+        var init = {
+            stylesheets: {
+                sync: {
+                    all: [
+                        //'https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i|Source+Code+Pro:400,700',
+                        '/static/css/enhanced.min.css?v={{ __build__ }}'
+                    ]
+                },
+                async: {
+                    print: ['/static/css/print.min.css?v={{ __build__ }}']
+                }
+            },
+            scripts: []
+        }
+    </script>
+    <script src="/static/js/init.js?v={{ __build__ }}"></script>
+</head>

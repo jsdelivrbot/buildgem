@@ -1,0 +1,17 @@
+<head>
+    <meta charset="utf-8" />
+    <title>{{ meta.title }}</title>
+    <base href="https://www.example.com" />
+    <meta name="description" content="{{ meta.description }}" />
+    {{#if meta.robots}}
+    <meta name="robots" content="{{ meta.robots }}" />
+    {{else}}
+    <meta name="robots" content="index, follow" />
+    {{/if}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{#if __canonical__}}
+    <link href="{{ __canonical__ }}" rel="canonical" />
+    {{/if}}
+    <link href="/static/favicons/default.ico" rel="icon" />
+    <link href="/static/styles/theme/all.min.css?v={{ __build__ }}" media="all" rel="stylesheet" />
+</head>

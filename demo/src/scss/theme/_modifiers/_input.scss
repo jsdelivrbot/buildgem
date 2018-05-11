@@ -1,0 +1,57 @@
+
+.input-fieldset {
+    margin-bottom: 2rem;
+}
+
+.input-label {
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+
+    &.input-control {
+        border: 2px solid $color_input_border;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+
+        //&:hover, &:focus {
+        //    border-color:  $color_clickable;
+        //}
+
+    }
+
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select {
+
+    &.input-control {
+
+        // Combined with box-sizing: border-box, the best way to get consistent
+        // dimensions of inputs, selects and buttons is to use a combination of
+        // line-height and height. The height must be equal to the line-height
+        // plus top and bottom borders.
+
+        height: 5rem;
+        line-height: 5rem;
+        padding: 0 2rem;
+    }
+
+}
+

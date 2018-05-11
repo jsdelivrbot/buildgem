@@ -1,0 +1,16 @@
+
+.Footnotes {
+
+    ul.footnotes-list {
+        color: $color_text_quiet;
+        font-size: $font_size_smallprint;
+        line-height: $line_height_smallprint;
+    }
+
+    //li.footnotes-item {}
+
+    a {
+        @include hyperlinks;
+    }
+
+}

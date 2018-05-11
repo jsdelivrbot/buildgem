@@ -1,0 +1,23 @@
+{
+  "name": "buildgem-test",
+  "description": "This repository is used for internal development only",
+  "private": true,
+  "author": {
+    "name": "Kieran Potts",
+    "email": "hello@kieranpotts.com",
+    "url": "https://www.kieranpotts.com/"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.11.0"
+  },
+  "main": "./lib/build",
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "standard": "^8.6.0"
+  },
+  "scripts": {
+    "build": "node lib/build",
+    "style": "standard lib/*.js && eslint lib/*.js"
+  }
+}

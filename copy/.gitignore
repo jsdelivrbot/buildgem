@@ -1,0 +1,31 @@
+# Exclude the following directories and
+# file types from source control:
+
+_*
+
+*.bak
+*.log
+*.swp
+
+.cvs
+.DS_Store
+.env
+.grunt
+.idea
+.project
+.settings
+.svn
+.tmp
+.todo
+.vagrant
+
+Thumbs.db
+
+/api/
+/build/
+/coverage/
+/dist/
+/nbproject/
+/node_modules/
+/tmp/
+/vendor/

@@ -1,0 +1,46 @@
+{
+  "name": "buildgem-sass",
+  "version": "0.1.0",
+  "description": "BuildGem plugin: compile CSS from Sass/Scss files",
+  "keywords": [
+    "buildgem",
+    "plugin",
+    "sass",
+    "scss",
+    "css"
+  ],
+  "author": {
+    "name": "Kieran Potts",
+    "email": "hello@kieranpotts.com",
+    "url": "https://www.kieranpotts.com/"
+  },
+  "license": "MIT",
+  "homepage": "https://www.buildgem.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buildgem/sass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buildgem/sass/issues"
+  },
+  "engines": {
+    "node": ">=6.11.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/sass",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "fs-extra": "^1.0.0",
+    "globby": "^6.1.0",
+    "node-sass": "^4.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "standard": "^8.6.0"
+  },
+  "scripts": {
+    "style": "standard lib/*.js && eslint lib/*.js"
+  }
+}

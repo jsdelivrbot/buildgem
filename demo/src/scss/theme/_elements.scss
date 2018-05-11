@@ -1,0 +1,740 @@
+
+// Browser reset and default styles for naked HTML element types.
+
+// Remove default margins and padding from everything.
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Set the page background color to white and allow layouts to collapse to 320px
+// wide but no less (smaller viewports will show a horizontal scrollbar).
+
+html {
+    background: $color_document;
+    min-width: 320px;
+}
+
+// Always show the vertical scrollbar, even if there is no overflow, to stop the
+// layout jumping around when users navigate between short pages (with nothing
+// beneath the fold) and long pages (with vertical overflow).
+
+body {
+    overflow-y: scroll;
+}
+
+// Change the default font to Arial. Use a monospace font for preformatted text,
+// computer code, and input controls. Have everything inherit its font-family
+// and font-weight (this change effects a handful of elements like <textarea>
+// and <legend>).
+
+body {
+    font-family: $font_family_sans;
+    font-weight: $font_weight_sans_normal;
+
+    * {
+        font-family: inherit;
+        font-weight: inherit;
+    }
+}
+
+pre {
+    font-family: $font_family_mono;
+}
+
+code, var, kbd, samp,
+input, select, textarea {
+    font-family: $font_family_mono;
+}
+
+pre code {
+    font-family: inherit;
+}
+
+input, select, textarea {
+    font-weight: $font_weight_mono_normal;
+}
+
+pre {
+    font-weight: $font_weight_mono_normal;
+}
+
+code, var, kbd, samp {
+    font-weight: $font_weight_mono_bold;
+}
+
+pre code {
+    font-weight: inherit;
+}
+
+//h1, h2, h3, h4, h5, h6,
+//figcaption,
+//strong, b,
+//th, tfoot {
+//    font-weight: $font_weight_sans_bold;
+//}
+
+// The <var> element is rendered in a monospace font and the browser's default
+// italics are removed, making <var> look the same as <code>, <kbd> and <samp>.
+
+var {
+    font-style: normal;
+}
+
+// Reset the root font size to 10px and have this inherited by everything.
+// Reinforce this for nested lists. (Internet Explorer is not perfectly accurate
+// at calculating root em sizes when the root font size is defined as a
+// percentage, 62.5%. Using px units works just fine.)
+
+html {
+    font-size: 10px;
+
+    * {
+        font-size: 100%;
+    }
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    font-size: 100%;
+}
+
+// All font size variations for block-level elements thereafter are defined
+// relative to the root font size (rem). This is true of the <body> element too
+// (where we set the default font size), but we use the em unit (not rem) here
+// due to a Chrome bug: http://stackoverflow.com/a/20206725
+
+body {
+    font-size: $font_size_body;
+}
+
+pre {
+    font-size: $font_size_monospace;
+}
+
+code, var, kbd, samp {
+    font-size: 100%;
+}
+
+pre {
+    code, var, kbd, samp {
+        font-size: 100%;
+    }
+}
+
+input, select, textarea {
+    font-size: $font_size_input;
+}
+
+small {
+    font-size: 100%;
+}
+
+// Use text-size-adjust to prevent the font size from changing when the
+// orientation of the device changes.
+
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+}
+
+// By default, have line-height precisely match the font size.
+
+body {
+    line-height: 1;
+
+    * {
+        line-height: inherit;
+    }
+}
+
+// The default font color is set on the <body> and allowed to cascade to all
+// elements within the document, even things like legends and form controls
+// which do not normally inherit their color. The default font color is
+// also inherited as the fill color for embedded SVGs (this can be overridden
+// by application of the inline "fill" attribute).
+
+body {
+    color: $color_text_default;
+
+    * {
+        color: inherit;
+    }
+}
+
+svg {
+    fill: currentColor;
+}
+
+// Remove bullets from unordered lists. But do not change the list-style-type
+// property for ordered lists, because doing so will override the "type"
+// attribute, which is useful. Move the position of bullets from outside to
+// inside, which generally looks better. Ensure that items within a list inherit
+// the list-style of their parent list container.
+
+ul, ol {
+    list-style-position: inside;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style: inherit;
+}
+
+// Browsers set the default presentation for horizontal rules in different
+// ways. A horizontal rule's color may be determined by the color or
+// background-color properties, for example. Here's a more consistent default
+// design for horizontal rules:
+
+hr {
+    border: 0;
+    border-top: 1px solid $color_text_default;
+    height: 0;
+}
+
+// Do not wrap text within figures or preformatted blocks. Horizontal scrolling
+// is preferred so that the intended presentation of preformatted text is
+// preserved.
+
+figure {
+    overflow: auto;
+}
+
+pre {
+    overflow: auto;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+// Inline code may be presented over multiple lines but we should prevent line
+// wrapping within words. This rule must not apply if <code> is nested within
+// <pre>.
+
+code {
+    white-space: nowrap;
+}
+
+pre code {
+    white-space: pre;
+}
+
+// Remove the dotted underline given to <abbr> and <dfn> elements in some
+// browsers, since their "title" values are inaccessible via most touch-screen
+// interfaces anyway. Remove the default italicised rendering of <dfn> elements,
+// too. The only differential styling for these elements should be the cursor.
+
+abbr, dfn {
+    text-decoration: none;
+}
+
+abbr[title], dfn[title] {
+    cursor: help;
+}
+
+dfn {
+    font-style: normal;
+}
+
+// Remove the default italics for <cite>, and the default strikethrough from
+// <del> and <ins> respectively.
+
+cite {
+    font-style: normal;
+}
+
+del, ins {
+    text-decoration: none;
+}
+
+// Use a subtler yellow background for marked text.
+
+mark {
+    background: $color_background_marked_text;
+}
+
+// The default presentation for superscript and subscript affects line-height
+// in all browsers. We'll use a different method to achieve a similar
+// presentation, one that does not affect line-height.
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+// Remove the default font-size for <small> print, converting it into a purely
+// semantic element. The <address> element has been redefined as a sectioning
+// element, but most browsers still treat it as a typographic element and
+// italicize the text. Fix this.
+
+small {
+    font-size: 100%;
+}
+
+address {
+    font-style: normal;
+}
+
+// Remove generated quotes from block-level and inline quotes.
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+    content: '';
+}
+
+// Ensure that pseudo elements always inherit the text-decoration and
+// vertical-align properties of their parents.
+
+::before, ::after {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+// Tables: change the default border model from separated to collapsed, which is
+// more convenient for styling. Let's also explicitly set border-spacing to zero,
+// even though it applies only to the separated border model. Get table cells to
+// adjust their width automatically to best fit their content (table-layout: auto).
+// Empty cells are there for a reason, so make sure they are shown
+// (empty-cells: show).
+
+table {
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    table-layout: auto;
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+}
+
+*[dir="rtl"] table {
+    text-align: right;
+}
+
+// Allow borders, backgrounds and other properties applied to a parent table
+// element to cascade down to individual cells, for convenience. Reinforce the
+// default position of captions; they work best above a table, not under it.
+
+thead, tbody, tfoot,
+tr, th, td {
+    background: inherit;
+    border: inherit;
+    font-weight: inherit;
+    margin: inherit;
+    padding: inherit;
+    text-align: inherit;
+    vertical-align: inherit;
+}
+
+caption {
+    caption-side: top;
+}
+
+// Remove underlines and outlines from hyperlinks, and have them inherit their
+// color initially. Remove the blue outline that Webkit/Blink browsers apply
+// to focused elements of any type.
+
+a {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+// All interactive elements should adopt the pointer cursor, unless they are
+// disabled.
+
+a, button,
+input[type="button"], input[type="image"], input[type="submit"], input[type="reset"],
+input[type="color"], input[type="range"] {
+    cursor: pointer;
+}
+
+button[disabled],
+input[disabled], keygen[disabled], select[disabled], textarea[disabled] {
+    cursor: default;
+}
+
+// Accesskeys may be printed in the ::after pseudo element, but remember it
+// is important for accessibility that accesskeys are described in the document
+// content, for example in "title" attributes.
+
+*[accesskey]::after {
+    content: ' [' attr(accesskey) ']';
+}
+
+// Remove the default border around fieldsets; we've already removed padding
+// via the universal selector. Convert the <label> element from inline to block
+// level, since it tends to be used as such.
+
+fieldset {
+    border: 0;
+}
+
+label {
+    display: block;
+}
+
+// Convert buttons and most input controls from inline to block-level, and have
+// them fill the full width of their container. Set these elements' vertical
+// alignment to baseline, which will apply only when they are converted back
+// to inline or inline-block display.
+
+// Textareas are rendered with a monospace font by default, but other input
+// controls are not. Make this consistent and have all form controls inherit
+// their font styles by default. (Note: options within a select box will
+// inherit the font settings of their parent, but this is not true of options
+// in a datalist, the presentation of which we get no control over. Also, we
+// get very little control over the presentation of keygen elements, except in
+// Firefox where they are actually rendered as standard <select> dropdowns.)
+
+// In Webkit on Mac, select boxes can fail to inherit some properties if they
+// do not have any styling applied to them directly (a weired bug!). Just giving
+// them an explicit background color is enough to eliminate this bug for all
+// other properties.
+
+button,
+input[type="button"],
+input[type="color"]
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="file"],
+input[type="image"]
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="reset"],
+input[type="search"],
+input[type="submit"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="week"],
+keygen, select, textarea {
+    background: $color_document;
+    border: 0;
+    box-sizing: border-box;
+    color: inherit;
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline; // In case display is changed to inline
+    width: 100%;
+}
+
+select[multiple], select[size] {
+    height: auto;
+}
+
+// Special cases:
+
+input[type="color"] {
+    display: inline-block;
+    width: 60px;
+}
+
+input[type="image"] {
+    margin: 0 auto; // Centered
+    width: auto;
+}
+
+// Internet Explorer versions 8 and 9 and box-sizing for checkboxes and radio
+// set to content-box rather than border-box. There's some excess padding in
+// those browsers, too.
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0;
+    vertical-align: baseline;
+    width: auto;
+}
+
+// Buttons are not stylable in iOS by default, but that can be changed by
+// explicitly declaring their appearance property.
+
+button {
+    -webkit-appearance: button;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+
+// Some Webkit browsers apply an OS-specific UI to search fields, which we want
+// to remove along with some inner padding which is applied in Safari 5 and
+// Chrome on OS X.
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+// Firefox will add, for accessibility purposes, a small dotted border on
+// focused buttons and input controls, which causes unwanted padding that makes
+// precision styling impossible. Here's the fix:
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border-width: 0;
+}
+
+// Firefox bug fix: https://bugzilla.mozilla.org/show_bug.cgi?id=932410
+
+input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+
+// Remove the default italics of optgroup labels and make them bold instead.
+
+optgroup {
+    font-style: normal;
+    font-weight: $font_weight_sans_bold;
+}
+
+// Turn off textarea resizing and set overflow to auto to remove the
+// vertical scrollbar in IE6-9 when it is not needed. Give textareas a minimum
+// height; this can be increased on a case-by-case basis via the rows attribute.
+
+textarea {
+    min-height: 10em;
+    overflow: auto;
+    resize: none;
+}
+
+// Apply a consistent color for placeholder text. Firefox 19+ gives placeholder
+// text an opacity of 0.54, which needs to be reset for consistency with other
+// browsers. IE needs higher-specificity selectors for its placeholder pseudo
+// element, else it will get overridden by the color property – go figure!
+
+::-webkit-input-placeholder {
+    color: $color_text_quiet;
+}
+
+::-moz-placeholder {
+    color: $color_text_quiet;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: $color_text_quiet;
+}
+
+// Here's an improved default presentation for selected text. It is a slightly
+// darker version of marked text. The ::-moz-selection and ::selection
+// pseudo-elements will not work if they are combined into the same selector,
+// so keep them separate here:
+
+::-moz-selection {
+    background: $color_background_selected_text;
+    color: $color_text_default;
+    text-shadow: none;
+}
+
+::selection {
+    background: $color_background_selected_text;
+    color: $color_text_default;
+    text-shadow: none;
+}
+
+// Convert all multimedia elements – images, audo and video, iframes, objects
+// and embedded pluggins – from inline to block-level display, since they are
+// mostly used as such.
+
+audio, video {
+    display: block;
+}
+
+// Don't display <audio> elements if they don't have playback controls enabled.
+// That's terrible for usability.
+
+audio:not([controls]) {
+    display: none;
+}
+
+// Block-level images are configured to fit the width of the container when they
+// are larger, maintaining their proportions when scaled down. We turn on
+// bicubic resampling to improve the quality of scaled images in IE > 6.
+// IE 6-9 adds a border when images are put inside hyperlinks.
+
+img {
+    border: 0;
+    display: block;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    max-width: 100%;
+}
+
+// Making video, iframe, object and embed elements responsive is more tricky.
+// For video elements, we set their max-width to 100%, which will ensure that
+// videos never exceed the width of their container. However, while the video
+// itself will scale proportionally, the height of the video box will remain
+// consistent, resulting in a letterbox effect. Setting height to auto doesn't
+// fix the problem; the video container will just collapse to a default height
+// which might not match the dimensions of the video frames. So, we give video
+// boxes a dark background so that the letterbox effect doesn't look so bad.
+
+// If the video ratio is known, you might adopt Thierry Koblentz's hack:
+// http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+
+video {
+    background: $color_text_default;
+    max-width: 100%;
+}
+
+object, embed, iframe {
+    display: block;
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+// Canvas elements are also made to scale proportionally in every browser, and
+// this works well in all mainstream browsers. SVGs are trickier. We can set
+// their max-width to 100%, but if we set their height to auto (to maintain
+// proportion when scaled) Internet Explorer will apply a fixed default height.
+// So our solution means that scaled-down SVGs will produce additional white
+// space above and below the graphic, as with videos.
+
+// Remember: large, dynamically-generated graphics should get redrawn whenever
+// their size needs to change, e.g. on window resize. This also gives better
+// control over things like the rendered size of fonts.
+
+canvas {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+// Fix the non-standard overflow on embedded SVGs in IE9:
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+// Polyfills:
+
+// IE 11 and Android 4.3- do not recognise the new <main> element and will not
+// not render it block-level. Internet Explorer 9+ is OK with other new
+// sectioning elements such as <aside> and <header>, but for the sake of better
+// visual degradation in legacy browsers we will patch those too.
+
+// The standard display properties for <details>, <summary>, <progress> and
+// <meter> elements need setting for the browsers that do not yet natively
+// support these elements.
+
+// Note: <hgroup> is obsolete in the current W3C standard, and <address> has
+// been redefined as a sectioning element.
+
+// We've also got polyfills for IE's proprietary "unselectable" attribute, for
+// the "hidden" attribute (which is not supported natively in IE10-, Firefox 3
+// or Safari 4), and a partial polyfill for the new <template> element.
+
+address, article, aside, details, footer, header, hgroup,
+main, nav, section, summary {
+    display: block;
+}
+
+progress, meter  {
+    display: inline-block;
+}
+
+*[unselectable] {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+*[hidden],
+template {
+    display: none !important;
+}
+
+// Have all sectioning elements envelope any nested floats, by application of
+// the modern clearfix hack. Let's do the same for figures, forms and fieldsets,
+// which often have floated elements nested inside them.
+
+address, article, aside, blockquote, div,
+fieldset, figure, footer, form, header,
+main, nav, section {
+    &::after {
+        clear:   both;
+        content: '';
+        display: table;
+    }
+}
+
+// Remove the top margin from every first-child, and the bottom margin from
+// every last-child, of every container. The purpose is to ensure that white
+// space around any element is determined by the properties of that element
+// and not by anything nested inside it.
+
+:first-child {
+    margin-top: 0 !important;
+}
+
+:last-child {
+    margin-bottom: 0 !important;
+}
+
+// Custom scrollbars, available only for Webkit-based browsers:
+
+//::-webkit-scrollbar {
+//    height: 14px;
+//    width:  14px;
+//}
+
+//::-webkit-scrollbar-track {
+//    background: $color_scrollbar_background;
+//}
+
+//::-webkit-scrollbar-thumb {
+//    background: $color_clickable;
+//}
+
+//::-webkit-scrollbar-thumb:hover {
+//    background: $color_clickable_hover;
+//}
+
+//::-webkit-scrollbar-thumb:active {
+//    background: $color_clickable_active;
+//}

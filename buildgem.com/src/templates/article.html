@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-GB">
+
+<include src="includes/head.html"></include>
+
+<body vocab="http://schema.org/">
+
+    <div class="WRAPPER">
+
+        <header class="BANNER">
+            <div class="CONTAINER">
+                <div class="BANNER_LOGO">
+                    <include src="includes/Logo.html"></include>
+                </div>
+                <nav class="BANNER_MENU">
+                    <div class="BANNER_MENU_INNER">
+                        <include src="includes/MainMenu.html"></include>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="MAIN">
+            <div class="CONTAINER">
+                <header class="MAIN_HEADER">
+                    <div class="Headline">
+                        <h1>{{ title }}</h1>
+                    </div>
+                </header>
+                <div class="MAIN_BODY">
+                    <div class="Article">
+                        {{ __article__ }}
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="CLEAR_FOOTER"></div>
+    </div>
+
+    <footer class="FOOTER">
+        <div class="CONTAINER">
+            <nav class="FOOTER_MENU">
+                <include src="includes/FooterMenu.html"></include>
+            </nav>
+            <div class="FOOTER_LEGAL">
+                <include src="includes/LegalNotices.html"></include>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

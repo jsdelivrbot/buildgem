@@ -1,0 +1,65 @@
+
+.BORDER {
+    display: none;
+}
+
+.CONTAINER {
+    margin: 0 auto;
+    max-width: $layout_max_width; // Default width
+    padding: 0 $spacer_x1;
+}
+
+.WRAPPER {
+    padding-bottom: $spacer_x8;
+    padding-top: $spacer_x2;
+}
+
+.BANNER {
+    // .text-only
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+//.BANNER_LOGO {}
+//.BANNER_NAV {}
+//.BANNER_NAV_MENU {}
+//.MAIN {}
+
+.MAIN_BREADCRUMB {
+    margin-bottom: $spacer_xhalf;
+}
+
+.MAIN_HAMBURGER {
+    float: right;
+}
+
+.MAIN_HEADER {
+    margin-bottom: $spacer_x4;
+    margin-right: $spacer_x2;
+}
+
+.MAIN_BODY,
+.MAIN_CALLTOACTION,
+.MAIN_RELATED,
+.MAIN_FOOTNOTES {
+    margin-bottom: $spacer_x2;
+}
+
+.FOOTER {
+    padding-bottom: $spacer_x2;
+}
+
+.FOOTER_LOGO {
+    margin-bottom: $spacer_xquarter;
+}
+
+.FOOTER_NAV_MENU {
+    margin-bottom: $spacer_x2;
+}
+
+.FOOTER_SOCIAL {
+    margin-bottom: $spacer_x1;
+}
+
+//.FOOTER_LEGAL {}

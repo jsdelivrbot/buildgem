@@ -1,0 +1,42 @@
+
+.Hello {
+
+    p, ul, ol {
+        font-size: $font_size_hello;
+        line-height: $line_height_default;
+        margin-bottom: $spacer_x1;
+    }
+
+    ul ul, ol ol {
+        padding-left: 2em;
+    }
+
+    //ul li {
+    //    margin-left: 0.5em;
+    //    padding-left: 0.5em;
+    //    position: relative;
+
+    //    &::before {
+    //        color: $color_text_bullet;
+    //        content: '■';
+    //        font-weight: $font_weight_sans_bold;
+    //        //margin-top: -1px;
+    //        position: absolute;
+    //        right: 100%;
+    //    }
+
+    //}
+
+    //code {
+    //    background: $color_code_background;
+    //    border-radius: $border_radius;
+    //    color: $color_code_foreground;
+    //    display: inline-block;
+    //    padding: 0 0.5rem;
+    //}
+
+    a {
+        @include hyperlinks;
+    }
+
+}

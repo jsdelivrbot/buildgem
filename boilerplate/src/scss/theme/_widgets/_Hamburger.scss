@@ -1,0 +1,20 @@
+
+.Hamburger {
+    background: $color_code_background;
+    color: $color_text_default;
+    //padding: 0.82rem;
+
+    a.hamburger-link {
+        display: block;
+        float: left;
+        font-size: 0;
+        line-height: 0;
+        @include hyperlinks;
+
+        svg.hamburger-icon {
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+
+}

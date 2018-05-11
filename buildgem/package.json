@@ -1,0 +1,53 @@
+{
+  "name": "buildgem",
+  "version": "0.1.0",
+  "description": "A pluggable build automation framework",
+  "keywords": [
+    "blacksmith",
+    "build",
+    "docs",
+    "documentation",
+    "markdown",
+    "metalsmith",
+    "static",
+    "task",
+    "website",
+    "wintersmith",
+    "yaml"
+  ],
+  "author": {
+    "name": "Kieran Potts",
+    "email": "hello@kieranpotts.com",
+    "url": "https://www.kieranpotts.com/"
+  },
+  "license": "MIT",
+  "homepage": "https://www.buildgem.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buildgem/buildgem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buildgem/buildgem/issues"
+  },
+  "engines": {
+    "node": ">=6.11.0"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "main": "./lib/buildgem",
+  "dependencies": {
+    "async": "^2.1.4",
+    "chalk": "^1.1.3",
+    "chokidar": "^1.6.1",
+    "del": "^2.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "standard": "^8.6.0"
+  },
+  "scripts": {
+    "style": "standard lib/*.js && eslint lib/*.js"
+  }
+}

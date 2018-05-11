@@ -1,0 +1,22 @@
+
+.Logo {
+
+    h1.logo-logo {
+        color: $color_text_menu;
+        font-size: $font_size_menu;
+        font-weight: $font_weight_sans_bold;
+        line-height: $line_height_menu;
+
+        &::after {
+            // Clearfix
+            clear: both;
+            content: '';
+            display: table;
+        }
+
+        a.logo-link {
+            @include hyperlinks;
+        }
+    }
+
+}

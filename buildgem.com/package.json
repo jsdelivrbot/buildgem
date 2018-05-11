@@ -1,0 +1,39 @@
+{
+  "name": "buildgem.com",
+  "description": "Source files and build script for buildgem.com",
+  "private": true,
+  "author": {
+    "name": "Kieran Potts",
+    "email": "hello@kieranpotts.com",
+    "url": "https://www.kieranpotts.com/"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.5.0"
+  },
+  "main": "./lib/build",
+  "dependencies": {
+    "buildgem": ">=0.0.1 <1.0.0",
+    "buildgem-copy": ">=0.0.1 <1.0.0",
+    "buildgem-md": ">=0.0.1 <1.0.0",
+    "buildgem-sass": ">=0.0.1 <1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "standard": "^8.6.0"
+  },
+  "scripts": {
+    "build": "node lib/build",
+    "save": "git checkout master && git add . && git commit -m \"No comment\" && git push origin master",
+    "deploy": "git checkout master && git add -f build && git commit -m \"Release\" && git subtree split --prefix build -b temp && git push -f origin temp:gh-pages && git branch -D temp",
+    "style": "standard lib/*.js && eslint lib/*.js"
+  },
+  "todo": {
+    "dependencies": {
+      "buildgem": "^1.0.0",
+      "buildgem-copy": "^1.0.0",
+      "buildgem-md": "^1.0.0",
+      "buildgem-sass": "^1.0.0"
+    }
+  }
+}

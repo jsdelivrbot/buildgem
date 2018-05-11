@@ -1,0 +1,50 @@
+
+.Brands {
+
+    ul.brands-list {
+        line-height: 1;
+
+        &::after {
+            // Clearfix:
+            clear:   both;
+            content: '';
+            display: table;
+        }
+
+    }
+
+    li.brands-item {
+        display: block;
+        float: left;
+        height: 12rem;
+        margin-bottom: $spacer_x1;
+        margin-right: $spacer_x1;
+        width: 18rem;
+    }
+
+    a.brands-link {
+        @include hyperlinks;
+        border-radius: $border_radius;
+        display: block;
+        overflow: hidden;
+        text-decoration: none;
+
+        svg {
+            display: block;
+            height: 12rem;
+            width: 18rem;
+
+            .brands-background {
+                fill: $color_covers_background; // Omit this to inherits text colour as fill
+                stroke: $color_covers_border;
+                stroke-width: 2px;
+            }
+
+            .brands-logo {
+                fill: $color_covers_foreground;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,55 @@
+
+.LegalNotices {
+
+    ul.legalnotices-list {
+        color: $color_text_quiet;
+        font-size: $font_size_smallprint;
+        line-height: $line_height_smallprint;
+
+        &::after {
+            // Clearfix:
+            clear: both;
+            content: '';
+            display: table;
+        }
+    }
+
+    li.legalnotices-item {
+        float: left;
+        margin-right: $spacer_xhalf;
+
+        //&:first-child {
+        //    float: none;
+        //    margin: 0;
+        //}
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    a.legalnotices-link {
+        color: inherit;
+        outline-offset: $outline_offset;
+        text-decoration: underline;
+
+        &:focus, &:active {
+            outline-style: $outline_style;
+            outline-width: $outline_width;
+            outline-color: $color_outline;
+        }
+
+        &:hover {
+            color: $color_clickable_hover;
+        }
+
+        &:focus {
+            color: $color_clickable_focus;
+        }
+
+        &:active {
+            color: $color_clickable_active;
+        }
+    }
+
+}

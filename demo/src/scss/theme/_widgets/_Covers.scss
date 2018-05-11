@@ -1,0 +1,70 @@
+
+.Covers {
+
+    ul {
+        line-height: 1;
+
+        &::after {
+            // Clearfix:
+            clear:   both;
+            content: '';
+            display: table;
+        }
+
+    }
+
+    li {
+        display: block;
+        float: left;
+        margin-bottom: $spacer_x1;
+        margin-right: $spacer_x1;
+        width: 15rem;
+
+        //&:last-child {
+        //    margin-bottom: $spacer_x2 !important;
+        //}
+
+    }
+
+    svg {
+        display: block;
+        height: 19.5rem;
+        width: 15rem;
+    }
+
+    a {
+        @include hyperlinks;
+        border-radius: $border_radius;
+        display: block;
+        overflow: hidden;
+        text-decoration: none; // Reset
+
+        svg {
+            .cover-background {
+                fill: $color_covers_background; // Omit this to inherits text colour as fill
+                stroke: $color_covers_border;
+                stroke-width: 2px;
+            }
+
+            .cover-text {
+                fill: $color_covers_foreground;
+            }
+
+            .cover-text-title {
+                font-size: 40px;
+                line-height: 100%;
+                font-family: $font_family_mono;
+                font-weight: bold;
+            }
+
+            .cover-text-subtitle {
+                font-size: 13px;
+                line-height: 100%;
+                font-family: $font_family_mono;
+                font-weight: bold;
+            }
+        }
+
+    }
+
+}

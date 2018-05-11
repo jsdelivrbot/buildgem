@@ -1,0 +1,107 @@
+
+// Colors:
+
+$color_background_marked_text: hsl(50, 100%, 50%);
+$color_background_selected_text: hsl(50, 100%, 50%);
+
+$color_clickable: inherit;
+$color_clickable_hover: inherit;
+$color_clickable_focus: inherit;
+$color_clickable_active: inherit;
+
+$color_clickable_visited: inherit;
+$color_clickable_visited_hover: inherit;
+$color_clickable_visited_focus: inherit;
+$color_clickable_visited_active: inherit;
+
+$color_btn: hsl(0, 0%, 60%);
+$color_btn_hover: hsl(0, 0%, 60%);
+$color_btn_focus: hsl(0, 0%, 60%);
+$color_btn_active: hsl(0, 0%, 60%);
+
+// Greyscale palette:
+
+$color_document: hsl(0, 0%, 100%);
+$color_covers_background: hsl(0, 0%, 100%);
+$color_code_background: transparent;
+$color_pre_background: hsl(0, 0%, 94%);
+$color_text_bullet: hsl(0, 0%, 84%);
+$color_covers_border: hsl(0, 0%, 84%);
+$color_text_hr: hsl(0, 0%, 84%);
+$color_text_tag: hsl(0, 0%, 70%);
+$color_outline: hsl(0, 0%, 70%);
+$color_input_border: hsl(0, 0%, 70%);
+$color_link_underline: hsl(0, 0%, 70%);
+$color_link_hr: hsl(0, 0%, 70%);
+$color_text_quiet: hsl(0, 0%, 70%);
+$color_icons: hsl(0, 0%, 70%);
+$color_text_menu: hsl(0, 0%, 50%);
+$color_text_default: hsl(0, 0%, 30%);
+$color_pre_foreground: hsl(0, 0%, 30%);
+$color_covers_foreground: hsl(0, 0%, 30%);
+$color_code_foreground: hsl(0, 0%, 30%);
+
+// Font families and weights
+
+$font_family_sans: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$font_family_sans_custom: 'Core Sans N', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$font_weight_sans_normal: 400;
+$font_weight_sans_bold: 700;
+
+$font_family_mono: 'Deja-vu Sans Mono', Monaco, Menlo, Consolas, 'Courier New', monospace;
+$font_family_mono_custom: 'Inconsolata', 'Deja-vu Sans Mono', Monaco, Menlo, Consolas, 'Courier New', monospace;
+$font_weight_mono_normal: 400;
+$font_weight_mono_bold: 700;
+
+// Font sizes:
+
+$font_size_h1_x2: 3.2rem;
+$font_size_h1: 2.6rem;
+$font_size_hello: 1.6rem;
+$font_size_h2: 1.6rem;
+$font_size_menu: 1.6rem;
+$font_size_h3: 1.3rem;
+$font_size_h4: 1.3rem;
+$font_size_body: 1.3em; // Default for <body> element, use ems not rems
+$font_size_default: 1.3rem;
+$font_size_monospace: 1.2rem; // <pre> tags only
+$font_size_input: 1.2rem;
+$font_size_smallprint: 1.2rem;
+
+// Line height:
+
+$line_height_h1: 1.2;
+$line_height_h2: 1.2;
+$line_height_h3: 1.2;
+$line_height_h4: 1.2;
+$line_height_default: 1.6;
+$line_height_smallprint: 1.6;
+$line_height_menu: 1.6;
+$line_height_monospace: 1.8;
+
+// Misc
+
+$outline_offset: 1px;
+$outline_style: solid;
+$outline_width: 2px;
+
+// Layout:
+
+$layout_max_width: 60rem;
+
+// Vertical spacing:
+
+$spacer_xquarter: 0.5rem;
+$spacer_xhalf: 1rem;
+$spacer_x1: 2rem;
+$spacer_x2: 4rem;
+$spacer_x4: 8rem;
+$spacer_x8: 16rem;
+
+// Icon sizes:
+
+$icon_length: 2rem; // x2 font-size
+
+// Border radius:
+
+$border_radius: 1px; //2px;
