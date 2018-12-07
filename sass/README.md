@@ -53,4 +53,4 @@ buildgem()
 - ``messages.success`` (string) Message to print in the console when the plugin has finished.
 
 
-<p><br /><br /><br /><br /><a href="http://standardjs.com/"><img src="https://cdn.rawgit.com/feross/standard/master/badge.svg" alt="Standard JS"></a></p>
+<p><br /><br /><br /><br /><a href="http://standardjs.com/"><img src="https://cdn.jsdelivr.net/gh/feross/standard/badge.svg" alt="Standard JS"></a></p>
